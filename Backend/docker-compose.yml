@@ -1,0 +1,23 @@
+services:
+  squid:
+    image: sameersbn/squid:latest
+    container_name: squid
+    restart: always
+    ports:
+      - "3128:3128"
+    volumes:
+      - ./squid/squid.conf:/etc/squid/squid.conf
+      - ./api/blocked_sites.txt:/etc/squid/blocked_sites.txt
+      - ./squid/blocked_page.html:/usr/share/squid/errors/pt-br/ERR_ACCESS_DENIED
+
+  api:
+    build: ./api
+    container_name: squid-api
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api/blocked_sites.txt:/app/blocked_sites.txt
+      - /var/run/docker.sock:/var/run/docker.sock
+    depends_on:
+      - squid
