@@ -1,4 +1,4 @@
-# Squid Proxy Dashboard
+# 🦑 Squid Proxy Dashboard 
 
 ## 📋 Descrição
 

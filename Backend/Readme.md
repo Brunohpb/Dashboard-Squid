@@ -1,4 +1,4 @@
-# 🦑 Squid Proxy Manager
+# 🦑 Squid Proxy Manager Backend
 
 Uma aplicação para gerenciar o proxy Squid com uma API REST completa, permitindo controle de listas de bloqueio, monitoramento de logs e gerenciamento de serviços.
 
